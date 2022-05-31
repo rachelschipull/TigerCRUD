@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Names for Cats App</title>
+  <link rel="stylesheet" href="/public/style.css" />
+</head>
+
+<body>
+
+ <h1> Choose a cat name and a cat type. </h1>
+
+ <form action="/quotes" method="POST">
+
+    <input type="text" placeholder="name" name="name">
+
+    <input type="text" placeholder="type" name="type">
+
+    <button type="submit">Submit</button>
+  </form>
+
+<div>
+    <h2>Tigers only button!</h2>
+    <p>
+      Replace first "cat" name with a tiger name.
+    </p>
+    <button id="update-button">Replace boring cat names.</button>
+  </div>
+  <div>
+    <h2>Remove tigers, too scary!</h2>
+    <p>
+      Delete one tiger type and name. Does nothing if there are no tigers. (Pretty sad actually.)
+    </p>
+    <button id="delete-button">Delete Tigers</button>
+    <div id="message"></div>
+  </div>
+  <h2> Cats </h2>
+
+  <ul class="quotes">
+<!-- Loop through quotes -->
+<% for(var i = 0; i < cats.length; i++) {%>
+  <li class="quote">
+    <!-- Output name from the iterated quote object -->
+    <span><%= cats[i].name %></span>:
+    <!-- Output quote from the iterated quote object -->
+    <span><%= cats[i].type %></span>
+  </li>
+<% } %>
+</ul>
+  <script src="/main.js"></script>
+</body>
+</html>
